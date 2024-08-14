@@ -8,6 +8,8 @@ import Alert from "./components/Alert";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [alert, setAlert] = useState(null);
