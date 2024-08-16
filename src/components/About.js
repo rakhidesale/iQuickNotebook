@@ -3,11 +3,11 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 
 const About = () => {
     return (
-        <Container className="mt-3">
-            <h2 className="my-5 text-center">About iQuickNote</h2>
+        <Container className="mt-5 mb-4 " style={{background: 'white', padding: '2rem', borderRadius: '4rem', boxShadow: '6px  6px 30px rgba(0,0,0,1)' }}>
+            <h2 className="my-5 mt-3 text-center">About iQuickNote</h2>
             <Row>
                 <Col md={6}>
-                    <Card className="mb-3 shadow-sm border-0">
+                    <Card className="mb-3" style={{background: 'white', boxShadow: '1px 1px 4px rgba(0,0,0,0.30)'}}>
                         <Card.Header as="h3">Our Mission</Card.Header>
                         <Card.Body>
                             <Card.Text>
@@ -19,7 +19,7 @@ const About = () => {
                     </Card>
                 </Col>
                 <Col md={6}>
-                    <Card className="mb-3 shadow-sm border-0">
+                    <Card className="mb-3" style={{background: 'white', boxShadow: '1px 1px 4px rgba(0,0,0,0.30)'}}>
                         <Card.Header as="h3">Features</Card.Header>
                         <ListGroup variant="flush">
                             <ListGroup.Item>Secure cloud storage for your notes</ListGroup.Item>
@@ -28,20 +28,6 @@ const About = () => {
                             <ListGroup.Item>Option to set reminders for important notes</ListGroup.Item>
                             <ListGroup.Item>Access your notes from anywhere with an internet connection</ListGroup.Item>
                         </ListGroup>
-                    </Card>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <Card className="mb-3 shadow-sm border-0">
-                        <Card.Header as="h3">Our Team</Card.Header>
-                        <Card.Body>
-                            <Card.Text>
-                                iQuickNote is created by a dedicated team of developers and designers who are passionate about
-                                making note-taking easier and more enjoyable. We constantly work to improve our platform and
-                                add new features based on user feedback.
-                            </Card.Text>
-                        </Card.Body>
                     </Card>
                 </Col>
             </Row>
