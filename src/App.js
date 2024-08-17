@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -8,12 +8,14 @@ import NoteState from "./context/notes/NoteState";
 import Alert from "./components/Alert";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Notes from "./components/Notes";
 import BackgroundVideo from './components/BackgroundVideo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
   const [alert, setAlert] = useState(null);
+  const [videoPlayed, setVideoPlayed] = useState(false); 
 
   const showAlert = (message, type) => {
     setAlert({
@@ -29,6 +31,14 @@ function App() {
     return localStorage.getItem('token') !== null || sessionStorage.getItem('token') !== null;
     //return localStorage.getItem('token') !== null;
   }
+  useEffect(() => {
+    // Trigger video timeout to display Home component after video ends
+    const videoTimeout = setTimeout(() => {
+      setVideoPlayed(true);
+    }, 2500);
+
+    return () => clearTimeout(videoTimeout); // Clear timeout on unmount
+  }, []);
 
   return (
       <NoteState>
@@ -37,13 +47,22 @@ function App() {
           <Alert alert={alert}/>
           <div className="container">
             <Routes>
-              <Route path="/" element={isAuthenticated() ? <Home showAlert={showAlert}/> : <Navigate to="/login" />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/login" element={<Login showAlert=
-              {showAlert} />} />
-              <Route path="/signup" element={<Signup showAlert=
-              {showAlert} />} />
-              <Route path="/backgroundvideo" element={<BackgroundVideo show={true} />} />
+            <Route
+              path="/"
+              element={
+                !videoPlayed ? (
+                  <BackgroundVideo show={true} />
+                ) : isAuthenticated() ? (
+                  <Navigate to="/notes" />
+                ) : (
+                  <Home showAlert={showAlert} />
+                )
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login showAlert={showAlert} />} />
+            <Route path="/signup" element={<Signup showAlert={showAlert} />} />
+            <Route path="/notes" element={isAuthenticated() ? <Notes showAlert={showAlert} /> : <Navigate to="/login" />} />
             </Routes>
           </div>
         </Router>
