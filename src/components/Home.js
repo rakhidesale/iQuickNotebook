@@ -1,9 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import Notes from './Notes.js';
 
-const Home = (props) => {
-  const { showAlert } = props;
+const Home = () => {
+  const isAuthenticated = localStorage.getItem('token') !== null || sessionStorage.getItem('token') !== null;
 
   return (
     <div>
@@ -12,7 +11,7 @@ const Home = (props) => {
         <Container>
           <h1 className="display-4">Welcome to iQuickNote</h1>
           <p className="lead">Your ultimate solution for managing personal notes with ease.</p>
-          <Button variant="primary" href="/signup">Get Started</Button>
+          {!isAuthenticated && <Button variant="primary" href="/signup">Get Started</Button>}
         </Container>
       </div>
 
@@ -44,12 +43,6 @@ const Home = (props) => {
             </Card>
           </Col>
         </Row>
-      </Container>
-
-      {/* Featured Notes Section */}
-      <Container className="my-5">
-        <h2 className="text-center mb-4">Your Notes</h2>
-        <Notes showAlert={showAlert} />
       </Container>
     </div>
   );
