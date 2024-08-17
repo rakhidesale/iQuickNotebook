@@ -25,7 +25,7 @@ const Login = (props) => {
                 sessionStorage.setItem('token', json.authtoken);
             }
             props.showAlert("Login Successful", "success");
-            navigate("/");
+            navigate("/notes");
         } else {
             props.showAlert("Invalid Credentials", "danger");
         }
@@ -43,7 +43,7 @@ const Login = (props) => {
         <div className="container mt-3 mb-4">
             <div className="row justify-content-center">
                 <div className="col-md-6 col-lg-4">
-                    <div className="card p-4" style={{background: 'white', padding: '2rem', borderRadius: '4rem', boxShadow: '6px  6px 30px rgba(0,0,0,1)' }}>
+                    <div className="card p-4" style={{background: '#e8e8e8', padding: '2rem', borderRadius: '4rem', boxShadow: 'hsl(261, 38%, 39%)' }}>
                         <div className="text-center mt-3 mb-3">
                             <img src={loginImage} alt="Login Illustration" style={{ width: '40%', height: 'auto' }} />
                         </div>
@@ -85,7 +85,7 @@ const Login = (props) => {
                                     <label className="form-check-label" htmlFor="rememberMe"> Remember me</label>
                                 </div>
                             </div>
-                            <button type="submit" className="btn btn-primary w-100">Login</button>
+                            <button type="submit" className="button w-100" style={{ padding: '17px 40px' }}>Login</button>
                         </form>
                         <div className="text-center mt-3">
                             <span>Don't have an account? <Link to="/Signup" className="text-decoration-none">Register</Link></span>

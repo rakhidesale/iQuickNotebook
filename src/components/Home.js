@@ -1,25 +1,23 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card} from 'react-bootstrap';
 
 const Home = () => {
   const isAuthenticated = localStorage.getItem('token') !== null || sessionStorage.getItem('token') !== null;
 
   return (
     <div>
-      {/* Hero Section */}
-      <div className="hero-section text-center text-light" style={{ backgroundColor: '#2D2926', padding: '100px 0' }}>
+      <div className="hero-section text-center text-light" style={{ background: '#e8e8e8', padding: '100px 0', borderRadius: '4rem', boxShadow: 'hsl(261, 38%, 39%)' }}>
         <Container>
-          <h1 className="display-4">Welcome to iQuickNote</h1>
-          <p className="lead">Your ultimate solution for managing personal notes with ease.</p>
-          {!isAuthenticated && <Button variant="primary" href="/signup">Get Started</Button>}
+          <h1 className="display-4" style={{color: 'black', fontWeight: '500', fontFamily: 'Georgia, serif'}}>Welcome to iQuickNote</h1>
+          <p className="lead mt-2" style={{color: 'black',fontFamily: 'Georgia, serif'}}>Your ultimate solution for managing personal notes with ease.</p>
+          {!isAuthenticated && <button onClick={() => window.location.href = '/signup'}>Get Started</button>}
         </Container>
       </div>
 
-      {/* Introduction Section */}
-      <Container className="my-5">
+      <Container className="my-5" style={{background: '#e8e8e8', padding: '2rem', borderRadius: '4rem', boxShadow: 'hsl(261, 38%, 39%)' }}>
         <Row>
           <Col md={6} className="mb-4">
-            <Card className="shadow-sm border-0">
+            <Card style={{background: '#e8e8e8', boxShadow: 'hsl(261, 38%, 39%)'}}>
               <Card.Body>
                 <Card.Title>Why iQuickNote?</Card.Title>
                 <Card.Text>
@@ -28,11 +26,11 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col md={6} className="mb-4">
-            <Card className="shadow-sm border-0">
+          <Col md={6} className="mb-4" >
+            <Card style={{background: '#e8e8e8', boxShadow: 'hsl(261, 38%, 39%)'}}>
               <Card.Body>
                 <Card.Title>Features You'll Love</Card.Title>
-                <Card.Text>
+                <Card.Text variant="flush">
                   - Secure cloud storage<br/>
                   - User-friendly interface<br/>
                   - Organize notes by categories<br/>

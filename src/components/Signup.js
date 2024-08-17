@@ -47,7 +47,7 @@ const Signup = (props) => {
         <div className="container mt-3 mb-4">
             <div className="row justify-content-center">
                 <div className="col-md-6 col-lg-5">
-                    <div className="card p-4" style={{background: 'white', padding: '2rem', borderRadius: '4rem', boxShadow: '6px  6px 30px rgba(0,0,0,1)' }}>
+                    <div className="card p-4" style={{background: '#e8e8e8', padding: '2rem', borderRadius: '4rem', boxShadow: 'hsl(261, 38%, 39%)' }}>
                         <div className="text-center mt-3 mb-3">
                             <img src={signupImage} alt="Signup Illustration" style={{ width: '35%', height: 'auto' }} />
                         </div>
@@ -107,7 +107,7 @@ const Signup = (props) => {
                                 />
                                 {errors.cpassword && <div className="invalid-feedback">{errors.cpassword}</div>}
                             </div>
-                            <button type="submit" className="btn btn-primary w-100">Submit</button>
+                            <button type="submit" className="button w-100" style={{ padding: '17px 40px' }}>Submit</button>
                         </form>
                         <div className="text-center mt-3">
                             <span>Already registered? <Link to="/Login" className="text-decoration-none">Login here</Link></span>

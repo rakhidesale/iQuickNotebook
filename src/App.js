@@ -10,7 +10,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Notes from "./components/Notes";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../src/styles/Button_style.css'
 
 function App() {
   const [alert, setAlert] = useState(null);
