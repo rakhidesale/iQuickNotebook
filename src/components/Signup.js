@@ -47,11 +47,11 @@ const Signup = (props) => {
         <div className="container mt-3 mb-4">
             <div className="row justify-content-center">
                 <div className="col-md-6 col-lg-5">
-                    <div className="card p-4" style={{background: '#e8e8e8', padding: '2rem', borderRadius: '4rem', boxShadow: 'hsl(261, 38%, 39%)' }}>
+                    <div className="card p-4" style={{background: '#e8e8e8', padding: '2rem', borderRadius: '4rem', boxShadow: '6px  6px 30px rgba(0,0,0,1)', fontFamily: 'cursive'}}>
                         <div className="text-center mt-3 mb-3">
                             <img src={signupImage} alt="Signup Illustration" style={{ width: '35%', height: 'auto' }} />
                         </div>
-                        <h2 className="text-center mb-4">Create an Account</h2>
+                        <h2 className="text-center mb-4" style={{color: '#4d0066'}}>Create an Account</h2>
                         <form onSubmit={handleSubmit}>
                             {errors.api && <div className="alert alert-danger">{errors.api}</div>}
                             <div className="mb-3">

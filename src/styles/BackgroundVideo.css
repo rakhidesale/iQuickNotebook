@@ -14,3 +14,9 @@
     height: 100%;
     object-fit: cover;
 }
+
+@media (max-width: 768px) {
+    .video-background video {
+        object-fit: contain; 
+    }
+}

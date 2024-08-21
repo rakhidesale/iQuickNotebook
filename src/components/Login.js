@@ -43,11 +43,11 @@ const Login = (props) => {
         <div className="container mt-3 mb-4">
             <div className="row justify-content-center">
                 <div className="col-md-6 col-lg-4">
-                    <div className="card p-4" style={{background: '#e8e8e8', padding: '2rem', borderRadius: '4rem', boxShadow: 'hsl(261, 38%, 39%)' }}>
+                    <div className="card p-4" style={{background: '#e8e8e8', padding: '2rem', borderRadius: '4rem', boxShadow: '6px  6px 30px rgba(0,0,0,1)', fontFamily: 'cursive' }}>
                         <div className="text-center mt-3 mb-3">
                             <img src={loginImage} alt="Login Illustration" style={{ width: '40%', height: 'auto' }} />
                         </div>
-                        <h2 className="text-center mb-4">Login</h2>
+                        <h2 className="text-center mb-4" style={{color: '#4d0066'}}>Login</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email address</label>

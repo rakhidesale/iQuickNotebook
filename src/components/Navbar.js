@@ -22,9 +22,9 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg">
+            <nav className="navbar navbar-expand-lg" style={{fontFamily: 'Cursive', color:'#4d0066'}}>
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/" onClick={handleLogoClick}>
+                    <Link className="navbar-brand" style={{color:'#260033'}} to="/" onClick={handleLogoClick}>
                         iQuicknote
                     </Link>
                     <button
@@ -43,15 +43,15 @@ const Navbar = () => {
                             {!localStorage.getItem('token') ? (
                                 <>
                                     <li className="nav-item">
-                                        <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/">Home</Link>
+                                        <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/" >Home</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">About</Link>
+                                        <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about" >About</Link>
                                     </li>
                                 </>
                             ) : (
                                 <li className="nav-item">
-                                    <Link className={`nav-link ${location.pathname === "/notes" ? "active" : ""}`} to="/notes">Notes</Link>
+                                    <Link className={`nav-link ${location.pathname === "/notes" ? "active" : ""}`} to="/notes" >Notes</Link>
                                 </li>
                             )}
                         </ul>

@@ -5,7 +5,7 @@ button {
     cursor: pointer;
     border: 1;
     border-color:rgb(219, 198, 170);
-    background-color: rgb(247, 246, 249);
+    background-color: #ebe8feed;
     box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
